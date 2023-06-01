@@ -17,17 +17,24 @@ Additionally, make sure to install the required dependencies by running the foll
 > pip install tqdm
 
 ## Getting Started
-To get started with the playlist migration, follow the steps below:
+Follow the steps listed below to begin the playlist migration:
 
-1. Open Anghami's web player and navigate to the playlist (or downloads and likes) you want to copy. Scroll to the bottom of the playlist to ensure that all the songs are loaded and visible.
-2. Right-click on the web page and select "Save As" to save the page as an HTML file. Remember the path where you saved the HTML file.
-3. Go to Spotify for Developers and login or create a new account
-4. Once logged in, go to the dashboard and create a new app (https://developer.spotify.com/dashboard/) - This app will allow you to access the Spotify API.
+1. Navigate to the playlist (or downloads and likes) you want to duplicate on Anghami's web player. Make sure that all the songs are loaded and viewable by scrolling to the bottom of the playlist.
+2. To save a web page as an HTML file, right-click on it and choose "Save As". Keep in mind the location where the HTML file was saved.
+3. Log in or register for a new account at Spotify for Developers - https://developer.spotify.com/dashboard/.
+4. Once logged in, go to the dashboard and create a new app. This app will allow you to access the Spotify API.
 5. After creating the app, copy the "Client ID" and "Client Secret" values. You may need to click on "Show Client Secret" to reveal it.
-6. Click on "Edit Settings" for your app and set the "Redirect URI" to http://127.0.0.1:8080. This is the URL that Spotify will redirect to after authentication.
+6. Click on "Edit Settings" for your app and set the "Redirect URI" to http://127.0.0.1:8080. After authentication, Spotify will reroute users to this website.
 7. Go to your Spotify account and copy your account username. This will be used to identify your Spotify account during the migration process.
-8. Populate the variables in the code with the information you just gathered (HTML file path, client ID, client secret, redirect URL, username), and run the script.
+8. Open the `config.ini` file and update the client ID, client secret and username values with the data you just acquired.
+9. Run the script.
+
+## Note
+If you saved the HTML file in a different location than the script directory, you will need to update the `html_file_path` variable in `config.int` as well.
+
+Also, do not forget to update the `playlist_name` variable with the name of the playlist you want to migrate.
 
 ## Acknowledgments
 The BeautifulSoup library: https://www.crummy.com/software/BeautifulSoup/
+
 The Spotipy library: https://spotipy.readthedocs.io/
